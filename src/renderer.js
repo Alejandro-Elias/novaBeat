@@ -27,7 +27,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const data = await loadData();  
 
-  cargarLista(listaReproduccion);
+  const list = []
+
+  cargarLista(listaReproduccion, list);
   mostrarMetadata(titleEl, artistEl, imgCover, data);
   cerrarBtn(cerrar);
   minimizarBtn(minimizar);
@@ -35,5 +37,5 @@ document.addEventListener("DOMContentLoaded", async () => {
   stop(stopBtn, player);
   tiempos(player, progress, time, data.duration || "00:00");
   cambiarVolumen(player, volumen, volumenText);
-  folder(selectFolder, player);
+  folder(selectFolder, listaReproduccion);
 });
