@@ -16,5 +16,10 @@
   },
   "dependencies": {
     "music-metadata": "^11.12.3"
+  },
+  "build": {
+    "linux": {
+      "icon": "build"
+    }
   }
 }

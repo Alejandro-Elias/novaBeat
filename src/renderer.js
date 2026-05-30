@@ -31,11 +31,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   cargarLista(listaReproduccion, list);
   mostrarMetadata(titleEl, artistEl, imgCover, data);
-  cerrarBtn(cerrar);
+  cerrarBtn(cerrar, player);
   minimizarBtn(minimizar);
   play(playBtn, player);
   stop(stopBtn, player);
   tiempos(player, progress, time, data.duration || "00:00");
   cambiarVolumen(player, volumen, volumenText);
-  folder(selectFolder, listaReproduccion);
+  folder(selectFolder, listaReproduccion, player);
 });
