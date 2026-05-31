@@ -5,15 +5,18 @@ import { getPlayList } from "../leerStorage.js";
 import { setTruck } from "../setTrack.js";
 
 export const play = (playBtn, player) => {
-  let playListStorage = JSON.parse(localStorage.getItem('playList'))  || [];
+  let playListStorage = JSON.parse(localStorage.getItem("playList")) || [];
 
-  let playList = []
+  let playList = [];
 
   const loadList = () => {
-    playList = playListStorage.length <= 0 ? getPlayList(indexCurrent, player) : playListStorage;
+    playList =
+      playListStorage.length <= 0
+        ? getPlayList(indexCurrent, player)
+        : playListStorage;
   };
 
-  loadList()
+  loadList();
 
   playBtn.addEventListener("click", () => {
     loadList();
@@ -24,7 +27,9 @@ export const play = (playBtn, player) => {
     }
 
     if (player.paused) {
-      setTruck(player, playList, indexCurrent)
+      if (!player.src) {
+        setTruck(player, playList, indexCurrent);
+      }
       player.play();
       playBtn.innerHTML = '<i class="fa-solid fa-circle-pause play"></i>';
     } else {
@@ -36,17 +41,17 @@ export const play = (playBtn, player) => {
   player.addEventListener("ended", () => {
     if (!playList || playList.length === 0) return;
 
-    nextIndex()
+    nextIndex();
 
     if (indexCurrent >= playList.length) {
       resetIndex();
     }
 
-    const currentPlay = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`
+    const currentPlay = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`;
 
     player.src = currentPlay;
-    setCurrent({ path: currentPlay })
-    loadData()
+    setCurrent({ path: currentPlay });
+    loadData();
     player.play();
   });
 };
