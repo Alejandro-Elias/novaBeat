@@ -12,7 +12,7 @@ function registerIpc() {
     title: "",
     artist: "",
     duration: "00:00",
-    cover: ""
+    cover: "./image/novaPortada.png"
   };
 }
 

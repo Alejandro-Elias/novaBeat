@@ -1,5 +1,4 @@
-export const getPlayList = (indexCurrrent, player) => {
+export const getPlayList = () => {
   const playList = JSON.parse(localStorage.getItem("playList")) || [];
-
   return playList;
 };

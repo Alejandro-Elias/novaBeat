@@ -22,6 +22,7 @@ import { cargarLista } from "./renderer/cargarLista.js";
   const volumenText = document.getElementById("volumen-texto");
   const selectFolder = document.getElementById("idFolderBtn");
   const listaReproduccion = document.getElementById("listaReproduccion");
+  export const nextBtn = document.getElementById("nextBtn");
   
 
   const list = [];
@@ -30,8 +31,7 @@ import { cargarLista } from "./renderer/cargarLista.js";
   mostrarMetadata(titleEl, artistEl, imgCover);
   cerrarBtn(cerrar, player);
   minimizarBtn(minimizar);
-  play(playBtn, player);
+  play(playBtn, player, nextBtn);
   stop(stopBtn, player);
   cambiarVolumen(player, volumen, volumenText);
   folder(selectFolder, listaReproduccion, player);
-

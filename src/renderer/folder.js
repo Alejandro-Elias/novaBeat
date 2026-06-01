@@ -1,4 +1,6 @@
+import { play } from "./buttons/play.js";
 import { cargarLista } from "./cargarLista.js";
+import { setCurrent } from "./currentTrack.js";
 import { resetIndex, indexCurrent } from "./indexCurrent.js";
 import { getPlayList } from "./leerStorage.js";
 
@@ -15,7 +17,12 @@ export const folder = (selectFolder, listaReproduccion, player) => {
 
     resetIndex()
 
-    player.src = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`;
+    const path = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`
+
+    player.src = path;
+
+    setCurrent({path: path})
+
     player.load();
   });
 };

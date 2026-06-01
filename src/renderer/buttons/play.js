@@ -1,3 +1,4 @@
+import { nextBtn } from "../../renderer.js";
 import { setCurrent } from "../currentTrack.js";
 import { loadData } from "../getData.js";
 import { nextIndex, resetIndex, indexCurrent } from "../indexCurrent.js";
@@ -5,21 +6,24 @@ import { getPlayList } from "../leerStorage.js";
 import { setTruck } from "../setTrack.js";
 
 export const play = (playBtn, player) => {
-  let playListStorage = JSON.parse(localStorage.getItem("playList")) || [];
 
   let playList = [];
 
   const loadList = () => {
+  let playListStorage = JSON.parse(localStorage.getItem("playList")) || [];
     playList =
       playListStorage.length <= 0
-        ? getPlayList(indexCurrent, player)
+        ? getPlayList()
         : playListStorage;
   };
+  
 
   loadList();
 
   playBtn.addEventListener("click", () => {
     loadList();
+
+  console.log(playList);
 
     if (!playList || playList.length === 0) {
       alert("debe seleccionar una carpeta primero");
@@ -38,9 +42,7 @@ export const play = (playBtn, player) => {
     }
   });
 
-  player.addEventListener("ended", () => {
-    if (!playList || playList.length === 0) return;
-
+  const next = () => {
     nextIndex();
 
     if (indexCurrent >= playList.length) {
@@ -53,5 +55,15 @@ export const play = (playBtn, player) => {
     setCurrent({ path: currentPlay });
     loadData();
     player.play();
+  }
+
+  player.addEventListener("ended", () => {
+    if (!playList || playList.length === 0) return;
+    next()
   });
+
+  nextBtn.addEventListener("click", () => {
+    if (!playList || playList.length === 0) return;
+    next()
+  })
 };
