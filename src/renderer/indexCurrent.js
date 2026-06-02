@@ -7,3 +7,7 @@ export const resetIndex = () => {
 export const nextIndex = () => {
   indexCurrent++;
 };
+
+export const previusIndex = () => {
+  indexCurrent--;
+};

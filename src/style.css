@@ -40,6 +40,16 @@ body {
     scale: 1.5;
 }
 
+.title {
+    min-width: 0;
+    display: inline-block;
+    width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 35px;
+}
+
 .progreso {
     display: flex;
     align-items: center;
@@ -143,17 +153,20 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    width: 100%;
 }
 
-.playListContent p {
-    color: #0075ff;
+.playListContent p {    color: #0075ff;
+
 }
 
 .playList {
+    width: 100%;
     max-height: 125px;
     overflow: auto;
-    padding: 5px;
-    border: 1px solid rgba(0, 117, 255, 0.3);
+    padding: 2px 5px;
+    background-color: rgb(80, 80, 80);
+    border-radius: 10px;
 }
 
 .playList::-webkit-scrollbar {
@@ -268,5 +281,21 @@ button:hover {
 }
 
 ul {
-    list-style-type: circle;
+    list-style-type: none;
+}
+
+ul li {
+    margin-bottom: 3px;
+}
+
+.active {
+    background-color: #0075ff;
+}
+
+.i-color {
+    color: rgba(0, 117, 255, 0.5);
+}
+
+button i:active {
+    color: rgba(0, 117, 255, 0.5);
 }

@@ -6,7 +6,7 @@ export function cargarLista(listaRepro, list) {
 
   if (lista.length > 0) {
     for (let i = 0; i < lista.length - 1; i++) {
-      listaRepro.innerHTML += `<li> ${lista[i].archivo}</li>`;
+      listaRepro.innerHTML += `<li class="track" >${i + 1} ${lista[i].archivo}</li>`;
     }
   }
 }

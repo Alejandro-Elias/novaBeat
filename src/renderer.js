@@ -9,20 +9,21 @@ import { mostrarMetadata } from "./renderer/mostrarDatos.js";
 import { cargarLista } from "./renderer/cargarLista.js";
   
   export const player = document.getElementById("player");
-  const playBtn = document.getElementById("playBtn");
-  const stopBtn = document.getElementById("stopBtn");
+  export const playBtn = document.getElementById("playBtn");
+  export const stopBtn = document.getElementById("stopBtn");
   export const progress = document.getElementById("progress");
   export const titleEl = document.getElementById("title");
   export const artistEl = document.getElementById("artist");
-  const volumen = document.getElementById("volumen-control");
+  export const volumen = document.getElementById("volumen-control");
   export const time = document.getElementById("tiempo-progreso");
-  const minimizar = document.getElementById("minimizar");
-  const cerrar = document.getElementById("cerrar");
+  export const minimizar = document.getElementById("minimizar");
+  export const cerrar = document.getElementById("cerrar");
   export const imgCover = document.getElementById("cover");
-  const volumenText = document.getElementById("volumen-texto");
-  const selectFolder = document.getElementById("idFolderBtn");
-  const listaReproduccion = document.getElementById("listaReproduccion");
+  export const volumenText = document.getElementById("volumen-texto");
+  export const selectFolder = document.getElementById("idFolderBtn");
+  export const listaReproduccion = document.getElementById("listaReproduccion");
   export const nextBtn = document.getElementById("nextBtn");
+  export const previousBtn = document.getElementById("previousBtn");
   
 
   const list = [];
@@ -31,7 +32,7 @@ import { cargarLista } from "./renderer/cargarLista.js";
   mostrarMetadata(titleEl, artistEl, imgCover);
   cerrarBtn(cerrar, player);
   minimizarBtn(minimizar);
-  play(playBtn, player, nextBtn);
   stop(stopBtn, player);
   cambiarVolumen(player, volumen, volumenText);
   folder(selectFolder, listaReproduccion, player);
+  play(playBtn, player, nextBtn);
