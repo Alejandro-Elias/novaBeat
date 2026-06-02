@@ -7,6 +7,8 @@ import { cambiarVolumen } from "./renderer/volumen.js";
 import { folder } from "./renderer/folder.js";
 import { mostrarMetadata } from "./renderer/mostrarDatos.js";
 import { cargarLista } from "./renderer/cargarLista.js";
+import { nextTrack } from "./renderer/buttons/play/next.js";
+import { previousTrack } from "./renderer/buttons/play/previous.js";
   
   export const player = document.getElementById("player");
   export const playBtn = document.getElementById("playBtn");
@@ -36,3 +38,5 @@ import { cargarLista } from "./renderer/cargarLista.js";
   cambiarVolumen(player, volumen, volumenText);
   folder(selectFolder, listaReproduccion, player);
   play(playBtn, player, nextBtn);
+  nextTrack()
+  previousTrack()

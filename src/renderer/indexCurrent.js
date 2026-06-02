@@ -8,6 +8,6 @@ export const nextIndex = () => {
   indexCurrent++;
 };
 
-export const previusIndex = () => {
+export const previousIndex = () => {
   indexCurrent--;
 };
