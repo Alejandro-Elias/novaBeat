@@ -299,3 +299,12 @@ ul li {
 button i:active {
     color: rgba(0, 117, 255, 0.5);
 }
+
+.suffleNoActive {
+    font-size: 36px;
+}
+
+.suffleActive {
+    color: #0075ff;
+    font-size: 36px;
+}
