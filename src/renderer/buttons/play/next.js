@@ -1,17 +1,32 @@
 import { player } from "../../../renderer.js";
 import { setCurrent } from "../../currentTrack.js";
 import { loadData } from "../../getData.js";
-import { indexCurrent, nextIndex, resetIndex } from "../../indexCurrent.js";
+import { indexCurrent, nextIndex, resetIndex, setindexCurrent } from "../../indexCurrent.js";
 import { updateActiveTrack } from "../../resaltarTrack.js";
 import { playList } from "./loadList.js";
 
+let repeatCondition = "repeat-normal";
+
+export const setRepeatCondition = (condition) => {
+  repeatCondition = condition
+}
+
 export const nextTrack = () => {
   const next = () => {
-    nextIndex();
+    if (repeatCondition === "repeat-one") {
+      setindexCurrent(indexCurrent);
+    } else {
+      nextIndex();
+    }
     updateActiveTrack();
 
     if (indexCurrent >= playList.length) {
-      resetIndex();
+      if (repeatCondition === "repeat-normal") {
+        resetIndex();
+      } else if (repeatCondition === "repeat-all") {
+        resetIndex();
+        player.play();
+      }
     }
 
     const currentPlay = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`;

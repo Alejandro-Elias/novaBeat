@@ -9,6 +9,7 @@ import { mostrarMetadata } from "./renderer/mostrarDatos.js";
 import { cargarLista } from "./renderer/cargarLista.js";
 import { nextTrack } from "./renderer/buttons/play/next.js";
 import { previousTrack } from "./renderer/buttons/play/previous.js";
+import { repeat } from "./renderer/repeat.js";
   
   export const player = document.getElementById("player");
   export const playBtn = document.getElementById("playBtn");
@@ -26,6 +27,8 @@ import { previousTrack } from "./renderer/buttons/play/previous.js";
   export const listaReproduccion = document.getElementById("listaReproduccion");
   export const nextBtn = document.getElementById("nextBtn");
   export const previousBtn = document.getElementById("previousBtn");
+  export const repeatBtn = document.getElementById("repeatBtn") 
+  export const repeatText = document.getElementById("repeatText") 
   
 
   export const list = [];
@@ -40,3 +43,4 @@ import { previousTrack } from "./renderer/buttons/play/previous.js";
   play();
   nextTrack()
   previousTrack()
+  repeat()

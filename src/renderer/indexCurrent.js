@@ -11,3 +11,7 @@ export const nextIndex = () => {
 export const previousIndex = () => {
   indexCurrent--;
 };
+
+export const setindexCurrent = (index) => {
+  indexCurrent = index
+}

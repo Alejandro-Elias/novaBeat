@@ -249,6 +249,10 @@ main {
 
 .control-secundario {
     grid-column: 3 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
 }
 .buttons {
     font-size: 50px;
@@ -300,11 +304,33 @@ button i:active {
     color: rgba(0, 117, 255, 0.5);
 }
 
-.suffleNoActive {
+.suffleNoActive, .repeat {
     font-size: 36px;
 }
 
 .suffleActive {
     color: #0075ff;
     font-size: 36px;
+}
+
+.repeat-container {
+    position: relative;
+}
+
+.repeat {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.repeatActive {
+    color: #0075ff;
+}  
+
+.one-all {
+    position: absolute;
+    font-size:9px;
+    top: 36%;
+    left: 30%;
 }

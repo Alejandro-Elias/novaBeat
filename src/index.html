@@ -39,7 +39,7 @@
             </div>
             <div class="navegador">
                 <div class="volumen">
-                    <div class="vol-text" >
+                    <div class="vol-text">
                         <p>Volumen: </p>
                         <p id="volumen-texto"><span class="volumen-cantidad"> 100</span></p>
                     </div>
@@ -48,23 +48,26 @@
                 </div>
                 <div class="control-principal">
                     <audio id="player"></audio>
-                    <button id="previousBtn" ><i class="fa-solid fa-circle-arrow-left buttons"></i></button>
+                    <button id="previousBtn"><i class="fa-solid fa-circle-arrow-left buttons"></i></button>
                     <button id="stopBtn"><i class="fa-solid fa-circle-stop buttons"></i></button>
                     <button id="playBtn"><i class="fa-solid fa-circle-play play"></i></button>
-                    <button id="nextBtn" ><i class="fa-solid fa-circle-arrow-right buttons"></i></button>
+                    <button id="nextBtn"><i class="fa-solid fa-circle-arrow-right buttons"></i></button>
                 </div>
                 <button class="control-secundario">
+                    <div class="repeat-container" >
+                        <i id="repeatBtn" class="fa-solid fa-repeat repeat"><span id="repeatText" class="one-all">one</span></i>
+                    </div>
                     <i id="suffle" class="fa-solid fa-shuffle suffleNoActive"></i>
                 </button>
             </div>
             <div class="miselanios">
-                <div class="listBtn" >
+                <div class="listBtn">
                     <button id="idFolderBtn" class="isFolderBtn"> Elije carpeta</button>
                 </div>
-                <div class="playListContent" >
+                <div class="playListContent">
                     <p>Lista de reproduccion</p>
-                    <div class="playList" >
-                        <ul id="listaReproduccion" ></ul>
+                    <div class="playList">
+                        <ul id="listaReproduccion"></ul>
                     </div>
                 </div>
             </div>
