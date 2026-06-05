@@ -288,10 +288,6 @@ ul {
     list-style-type: none;
 }
 
-ul li {
-    margin-bottom: 3px;
-}
-
 .active {
     background-color: #0075ff;
 }
@@ -333,4 +329,12 @@ button i:active {
     font-size:9px;
     top: 36%;
     left: 30%;
+}
+
+.item-playlist  {
+    width: 100%;
+    text-align: start;
+    color: whitesmoke;
+    height: 20px;
+    background-color: transparent;
 }

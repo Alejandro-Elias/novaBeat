@@ -1,31 +1,43 @@
 import { selectFolder, listaReproduccion, player } from "../renderer.js";
 import { play } from "./buttons/play.js";
+import { loadList } from "./buttons/play/loadList.js";
 import { cargarLista } from "./cargarLista.js";
 import { setCurrent } from "./currentTrack.js";
 import { loadData } from "./getData.js";
 import { resetIndex, indexCurrent } from "./indexCurrent.js";
 import { getPlayList } from "./leerStorage.js";
+import { updateActiveTrack } from "./resaltarTrack.js";
+import { setTrack } from "./setTrack.js";
+
+export let listaNueva = false;
+
+export const setListaNueva = (nuevaCondicion) => {
+  listaNueva = nuevaCondicion;
+};
 
 export const folder = () => {
   selectFolder.addEventListener("click", async () => {
-  localStorage.removeItem("playList");
     await window.electronAPI.carpetaALista();
 
     const playList = await window.electronAPI.devolverLista();
+    if (playList.length > 0) {
+      localStorage.removeItem("playList");
 
-    localStorage.setItem("playList", JSON.stringify(playList));
+      localStorage.setItem("playList", JSON.stringify(playList));
 
-    cargarLista(listaReproduccion, playList);
+      cargarLista(listaReproduccion, playList);
 
-    resetIndex()
+      resetIndex();
 
-    const path = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`
+      const path = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`;
 
-    player.src = path;
+      setCurrent({ path: path });
 
-    setCurrent({path: path})
-
-    player.load();
-    loadData()
+      loadData();
+      loadList();
+      setListaNueva(true);
+      updateActiveTrack();
+      
+    }
   });
 };

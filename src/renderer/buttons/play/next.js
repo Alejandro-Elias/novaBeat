@@ -1,39 +1,48 @@
 import { player } from "../../../renderer.js";
 import { setCurrent } from "../../currentTrack.js";
+import { listaNueva, setListaNueva } from "../../folder.js";
 import { loadData } from "../../getData.js";
-import { indexCurrent, nextIndex, resetIndex, setindexCurrent } from "../../indexCurrent.js";
+import {
+  indexCurrent,
+  nextIndex,
+  resetIndex,
+  setindexCurrent,
+} from "../../indexCurrent.js";
 import { updateActiveTrack } from "../../resaltarTrack.js";
+import { setTrack } from "../../setTrack.js";
 import { playList } from "./loadList.js";
 
 let repeatCondition = "repeat-normal";
 
 export const setRepeatCondition = (condition) => {
-  repeatCondition = condition
-}
+  repeatCondition = condition;
+};
 
 export const nextTrack = () => {
   const next = () => {
-    if (repeatCondition === "repeat-one") {
-      setindexCurrent(indexCurrent);
+    
+    if (listaNueva) {
+      setListaNueva(false);
+      updateActiveTrack();
     } else {
-      nextIndex();
-    }
-    updateActiveTrack();
+      if (repeatCondition === "repeat-one") {
+        setindexCurrent(indexCurrent);
+      } else {
+        nextIndex();
+      }
+      updateActiveTrack();
 
-    if (indexCurrent >= playList.length) {
-      if (repeatCondition === "repeat-normal") {
-        resetIndex();
-      } else if (repeatCondition === "repeat-all") {
-        resetIndex();
-        player.play();
+      if (indexCurrent >= playList.length) {
+        if (repeatCondition === "repeat-normal") {
+          resetIndex();
+        } else if (repeatCondition === "repeat-all") {
+          resetIndex();
+          player.play();
+        }
       }
     }
 
-    const currentPlay = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`;
-
-    player.src = currentPlay;
-    setCurrent({ path: currentPlay });
-    loadData();
+    setTrack(player, playList, indexCurrent)
     player.play();
   };
 

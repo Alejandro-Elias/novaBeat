@@ -10,6 +10,7 @@ import { cargarLista } from "./renderer/cargarLista.js";
 import { nextTrack } from "./renderer/buttons/play/next.js";
 import { previousTrack } from "./renderer/buttons/play/previous.js";
 import { repeat } from "./renderer/repeat.js";
+import { selectPLayList } from "./renderer/SelectItemPlaylist.js";
   
   export const player = document.getElementById("player");
   export const playBtn = document.getElementById("playBtn");
@@ -44,3 +45,4 @@ import { repeat } from "./renderer/repeat.js";
   nextTrack()
   previousTrack()
   repeat()
+  selectPLayList()

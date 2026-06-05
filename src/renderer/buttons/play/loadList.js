@@ -7,6 +7,7 @@ const suffle = document.getElementById("suffle");
 export let playList = [];
 let playListNormal = [];
 let playListSuffle = [];
+let playListRandon = false
 
 export const loadList = () => {
   let playListStorage = JSON.parse(localStorage.getItem("playList")) || [];
@@ -26,8 +27,9 @@ export const loadList = () => {
 
   playListSuffle = randomIndexes.map((index) => playListNormal[index]);
 
-  playList = playListNormal;
+  playListRandon ? playList = playListSuffle : playList = playListNormal;
 
+  mostrarLista()
 };
 
 suffle.addEventListener('click', () => {
@@ -35,13 +37,13 @@ suffle.addEventListener('click', () => {
     suffle.classList.remove('suffleNoActive') 
     suffle.classList.add('suffleActive')
     playList = playListSuffle 
-    console.log(suffle.classList[2]);    
+    playListRandon = true
     mostrarLista()
   } else {
     suffle.classList.remove('suffleActive') 
     suffle.classList.add('suffleNoActive')
     playList = playListNormal 
-    console.log(suffle.classList[2]);
+    playListRandon = false
     mostrarLista()
     }
 })
