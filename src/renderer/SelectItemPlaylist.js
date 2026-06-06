@@ -1,5 +1,5 @@
 import { listaReproduccion, player } from "../renderer.js";
-import { ejecutarPlay, play } from "./buttons/play.js";
+import { ejecutarPlay, play, playSelectItem } from "./buttons/play.js";
 import { indexCurrent, setindexCurrent } from "./indexCurrent.js";
 import { setTrack } from "./setTrack.js";
 
@@ -16,6 +16,6 @@ export const selectPLayList = () => {
     setindexCurrent(index);
     console.log(indexCurrent);
 
-    ejecutarPlay()
+    playSelectItem()
   });
 };
