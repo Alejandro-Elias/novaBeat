@@ -1,4 +1,5 @@
 import { playBtn, player } from "../../renderer.js";
+import { loadData } from "../getData.js";
 import { indexCurrent } from "../indexCurrent.js";
 import { updateActiveTrack } from "../resaltarTrack.js";
 import { setTrack } from "../setTrack.js";
@@ -17,6 +18,7 @@ export const ejecutarPlay = async () => {
   }
 
   updateActiveTrack();
+  loadData()
   player.play();
   playBtn.innerHTML = '<i class="fa-solid fa-circle-pause play i-color"></i>';
 };

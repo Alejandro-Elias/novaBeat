@@ -1,7 +1,6 @@
-import { listaReproduccion, player } from "../renderer.js";
-import { ejecutarPlay, play, playSelectItem } from "./buttons/play.js";
-import { indexCurrent, setindexCurrent } from "./indexCurrent.js";
-import { setTrack } from "./setTrack.js";
+import { listaReproduccion } from "../renderer.js";
+import { playSelectItem } from "./buttons/play.js";
+import { setindexCurrent } from "./indexCurrent.js";
 
 export const selectPLayList = () => {
   listaReproduccion.addEventListener("click", (e) => {

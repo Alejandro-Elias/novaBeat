@@ -1,5 +1,4 @@
-import { cargarLista } from "../../cargarLista.js";
-import { getPlayList } from "../../leerStorage.js";
+import { getStorage } from "../../../localStorage.js";
 import { mostrarLista } from "../../mostrarLista.js";
 
 const suffle = document.getElementById("suffle");
@@ -10,9 +9,7 @@ let playListSuffle = [];
 let playListRandon = false
 
 export const loadList = () => {
-  let playListStorage = JSON.parse(localStorage.getItem("playList")) || [];
-  playListNormal =
-    playListStorage.length <= 0 ? getPlayList() : playListStorage;
+  playListNormal = getStorage('playList') || []
 
   let randomIndexes = [];
   let randomIndex = 0

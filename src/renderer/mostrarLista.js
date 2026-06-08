@@ -1,9 +1,10 @@
+import { getStorage } from "../localStorage.js";
 import { listaReproduccion } from "../renderer.js";
 import { playList } from "./buttons/play/loadList.js";
-import { lista } from "./cargarLista.js";
 
 export const mostrarLista = () => {
   listaReproduccion.innerHTML = " ";
+  const lista = getStorage('playList')
 
   if (playList.length > 0) {
     for (let i = 0; i < playList.length; i++) {

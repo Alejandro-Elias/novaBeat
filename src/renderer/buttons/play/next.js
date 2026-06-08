@@ -1,5 +1,5 @@
+import { getStorage, setStorage } from "../../../localStorage.js";
 import { player } from "../../../renderer.js";
-import { listaNueva, setListaNueva } from "../../folder.js";
 import { loadData } from "../../getData.js";
 import {
   indexCurrent,
@@ -9,6 +9,7 @@ import {
 } from "../../indexCurrent.js";
 import { updateActiveTrack } from "../../resaltarTrack.js";
 import { setTrack } from "../../setTrack.js";
+import { ejecutarPlay, playSelectItem } from "../play.js";
 import { playList } from "./loadList.js";
 
 let repeatCondition = "repeat-normal";
@@ -19,8 +20,10 @@ export const setRepeatCondition = (condition) => {
 
 export const nextTrack = () => {
   const next = () => {
+    const listaNueva = getStorage("listaNueva");
     if (listaNueva) {
-      setListaNueva(false);
+      resetIndex();
+      setStorage("listaNueva", false);
       updateActiveTrack();
     } else {
       if (repeatCondition === "repeat-one") {
@@ -35,13 +38,14 @@ export const nextTrack = () => {
           resetIndex();
         } else if (repeatCondition === "repeat-all") {
           resetIndex();
-          player.play();
+          setStorage("indexCurrent", 0);
+          ejecutarPlay();
         }
       }
     }
 
     setTrack(player, playList, indexCurrent);
-    player.play();
+    ejecutarPlay();
   };
 
   player.addEventListener("ended", () => {

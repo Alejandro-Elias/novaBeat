@@ -1,6 +1,5 @@
 const getIndex = () => {
   const valor = JSON.parse(localStorage.getItem("indexCurrent"));
-  console.log(valor);
   return valor  
 };
 

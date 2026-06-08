@@ -1,13 +1,11 @@
-import { selectFolder, listaReproduccion, player } from "../renderer.js";
-import { play } from "./buttons/play.js";
+import { removeItemStorage, setStorage } from "../localStorage.js";
+import { selectFolder } from "../renderer.js";
 import { loadList } from "./buttons/play/loadList.js";
-import { cargarLista } from "./cargarLista.js";
 import { setCurrent } from "./currentTrack.js";
 import { loadData } from "./getData.js";
 import { resetIndex, indexCurrent } from "./indexCurrent.js";
-import { getPlayList } from "./leerStorage.js";
+import { mostrarLista } from "./mostrarLista.js";
 import { updateActiveTrack } from "./resaltarTrack.js";
-import { setTrack } from "./setTrack.js";
 
 export let listaNueva = false;
 
@@ -21,15 +19,13 @@ export const folder = () => {
 
     const playList = await window.electronAPI.devolverLista();
     if (playList.length > 0) {
-      localStorage.removeItem("playList");
+      removeItemStorage("playList")
 
-      localStorage.setItem("playList", JSON.stringify(playList));
+      setStorage("playList",playList)
 
-      cargarLista(listaReproduccion, playList);
+      mostrarLista();
 
       resetIndex();
-
-      localStorage.setItem("indexCurrent", JSON.stringify(0))
 
       const path = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`;
 
@@ -38,6 +34,7 @@ export const folder = () => {
       loadData();
       loadList();
       setListaNueva(true);
+      setStorage("listaNueva", true)
       updateActiveTrack();
       
     }

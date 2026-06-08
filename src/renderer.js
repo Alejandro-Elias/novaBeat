@@ -6,11 +6,11 @@ import { tiempos } from "./renderer/tiempos.js";
 import { cambiarVolumen } from "./renderer/volumen.js";
 import { folder } from "./renderer/folder.js";
 import { mostrarMetadata } from "./renderer/mostrarDatos.js";
-import { cargarLista } from "./renderer/cargarLista.js";
 import { nextTrack } from "./renderer/buttons/play/next.js";
 import { previousTrack } from "./renderer/buttons/play/previous.js";
 import { repeat } from "./renderer/repeat.js";
 import { selectPLayList } from "./renderer/SelectItemPlaylist.js";
+import { mostrarLista } from "./renderer/mostrarLista.js";
   
   export const player = document.getElementById("player");
   export const playBtn = document.getElementById("playBtn");
@@ -33,7 +33,7 @@ import { selectPLayList } from "./renderer/SelectItemPlaylist.js";
 
   export const list = [];
 
-  cargarLista();
+  mostrarLista();
   mostrarMetadata();
   cerrarBtn();
   minimizarBtn();

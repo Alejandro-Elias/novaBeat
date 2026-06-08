@@ -1,31 +1,25 @@
+import { getStorage } from "../../../localStorage.js";
 import { player, previousBtn } from "../../../renderer.js";
 import { setCurrent } from "../../currentTrack.js";
-import { loadData } from "../../getData.js";
 import { indexCurrent, previousIndex } from "../../indexCurrent.js";
-import { updateActiveTrack } from "../../resaltarTrack.js";
-import { playList } from "./loadList.js";
+import { setTrack } from "../../setTrack.js";
+import { ejecutarPlay } from "../play.js";
 
 export const previousTrack = () => {
-
   const previous = () => {
+    const playList = getStorage("playList")
     if (indexCurrent > 0) {
       previousIndex();
     }
 
-    updateActiveTrack();
-
-    const currentPlay = `${playList[indexCurrent].carpeta}/${playList[indexCurrent].archivo}`;
-
-    player.src = currentPlay;
-    setCurrent({ path: currentPlay });
-    loadData();
-    player.play();
-  }
+    setTrack(player, playList, indexCurrent);
+    ejecutarPlay();
+  };
 
   previousBtn.addEventListener("click", () => {
-    previous()
+    previous();
   });
-   if ("mediaSession" in navigator) {
+  if ("mediaSession" in navigator) {
     navigator.mediaSession.setActionHandler("previoustrack", () => {
       previous();
     });
