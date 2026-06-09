@@ -1,5 +1,6 @@
 import { removeItemStorage, setStorage } from "../localStorage.js";
 import { selectFolder } from "../renderer.js";
+import { suffle } from "../suffle.js";
 import { loadList } from "./buttons/play/loadList.js";
 import { setCurrent } from "./currentTrack.js";
 import { loadData } from "./getData.js";
@@ -21,7 +22,7 @@ export const folder = () => {
     if (playList.length > 0) {
       removeItemStorage("playList")
 
-      setStorage("playList",playList)
+      setStorage("playList", playList)
 
       mostrarLista();
 
@@ -31,11 +32,12 @@ export const folder = () => {
 
       setCurrent({ path: path });
 
-      loadData();
       loadList();
+      loadData();
       setListaNueva(true);
       setStorage("listaNueva", true)
       updateActiveTrack();
+      suffle()
       
     }
   });

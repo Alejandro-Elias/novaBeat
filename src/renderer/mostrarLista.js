@@ -10,7 +10,7 @@ export const mostrarLista = () => {
     for (let i = 0; i < playList.length; i++) {
       listaReproduccion.innerHTML += `<li class="track" ><button class="item-playlist" data-index="${i}" > ${playList[i].archivo}</button></li>`;
     }
-  } else {
+  } else if (lista > 0) {
     for (let i = 0; i < lista.length; i++) {
       listaReproduccion.innerHTML += `<li class="track" ><button class="item-playlist" data-index="${i}"> ${lista[i].archivo}</li>`;
     }

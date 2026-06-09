@@ -1,12 +1,21 @@
+import { getStorage } from "../../localStorage.js";
 import { playBtn, player } from "../../renderer.js";
+import { listaNueva } from "../folder.js";
 import { loadData } from "../getData.js";
 import { indexCurrent } from "../indexCurrent.js";
 import { updateActiveTrack } from "../resaltarTrack.js";
 import { setTrack } from "../setTrack.js";
-import { loadList, playList } from "./play/loadList.js";
+import { loadList } from "./play/loadList.js";
+
+const playList = getStorage("playList")
 
 export const ejecutarPlay = async () => {
-  loadList();
+
+  const listaNueva = getStorage("listaNueva")
+  
+  if (listaNueva) {
+    loadList();
+  }
 
   if (!playList || playList.length === 0) {
     alert("debe seleccionar una carpeta primero");
@@ -14,11 +23,11 @@ export const ejecutarPlay = async () => {
   }
 
   if (!player.src || player.src === "") {
-    await setTrack(player, playList, indexCurrent); 
+    await setTrack(player, playList, indexCurrent);
   }
 
   updateActiveTrack();
-  loadData()
+  loadData();
   player.play();
   playBtn.innerHTML = '<i class="fa-solid fa-circle-pause play i-color"></i>';
 };
@@ -26,11 +35,10 @@ export const ejecutarPlay = async () => {
 export const playSelectItem = async () => {
   await setTrack(player, playList, indexCurrent);
 
-
   updateActiveTrack();
   player.play();
   playBtn.innerHTML = '<i class="fa-solid fa-circle-pause play i-color"></i>';
-}
+};
 
 const ejecutarPause = () => {
   player.pause();
@@ -38,7 +46,9 @@ const ejecutarPause = () => {
 };
 
 export const play = () => {
-  loadList();
+  if (listaNueva) {
+    loadList();
+  }
 
   playBtn.addEventListener("click", () => {
     if (player.paused) {

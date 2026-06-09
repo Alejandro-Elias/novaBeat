@@ -1,6 +1,7 @@
-import { indexCurrent } from "./indexCurrent.js";
+import { getStorage } from "../localStorage.js";
 
 export const updateActiveTrack = () => {
+    const indexCurrent = getStorage("indexCurrent")
     const tracks = document.querySelectorAll(".track");
 
     tracks.forEach((track, index) => {
