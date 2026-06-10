@@ -41,7 +41,7 @@ export const folder = () => {
 
       resetIndex();
 
-      const path = `${playList[indexCurrent].song.carpeta}/${playList[indexCurrent].song.archivo}`;
+      const path = `${playListNormal[indexCurrent].track.carpeta}/${playListNormal[indexCurrent].track.archivo}`;
 
       setCurrent({ path: path });
 
