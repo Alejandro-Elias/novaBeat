@@ -31,6 +31,8 @@ import { loadList } from "./renderer/buttons/play/loadList.js";
   export const previousBtn = document.getElementById("previousBtn");
   export const repeatBtn = document.getElementById("repeatBtn") 
   export const repeatText = document.getElementById("repeatText") 
+  export const eliminar = document.getElementById("eliminar") 
+
 
   export const list = [];
 

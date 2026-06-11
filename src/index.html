@@ -8,8 +8,9 @@
     <link rel="stylesheet" href="./fontAwesome/webfonts/all.min.css">
 
     <link rel="icon" href="../build/icon.png">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' blob:; script-src 'self';"/>
-    <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; img-src 'self' blob:; script-src 'self';"/>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' blob:; script-src 'self';" />
+    <meta http-equiv="X-Content-Security-Policy"
+        content="default-src 'self'; img-src 'self' blob:; script-src 'self';" />
     <title>NovaBets</title>
 </head>
 
@@ -27,7 +28,7 @@
             <div class="datos">
                 <div class="titulos ">
                     <h2 class="title" id="title"></h2>
-                    <p class="title" id="artist"></p>
+                    <p class="artist" id="artist"></p>
                 </div>
                 <div class="progreso">
                     <input class="barra-progreso" id="progress" type="range" value="0" min="0" max="100" step="0.1" />
@@ -54,18 +55,24 @@
                     <button id="nextBtn"><i class="fa-solid fa-circle-arrow-right buttons"></i></button>
                 </div>
                 <button class="control-secundario">
-                    <div class="repeat-container" >
-                        <i id="repeatBtn" class="fa-solid fa-repeat repeat"><span id="repeatText" class="one-all">one</span></i>
+                    <div class="repeat-container">
+                        <i id="repeatBtn" class="fa-solid fa-repeat repeat"><span id="repeatText"
+                                class="one-all">one</span></i>
                     </div>
                     <i id="suffle" class="fa-solid fa-shuffle suffleNoActive"></i>
                 </button>
             </div>
             <div class="miselanios">
                 <div class="listBtn">
-                    <button id="idFolderBtn" class="isFolderBtn"> Elije carpeta</button>
+                    <button id="idFolderBtn" class="isFolderBtn"><i class="fa-solid fa-folder-open folder"></i><span
+                            class="folderText">Carpeta</span></button>
+                    <button id="idFileBtn" class="isFolderBtn"><i class="fa-regular fa-file folder"></i><span
+                            class="folderText">Archivo</span></button>
+                    <button id="isListBtn" class="isFolderBtn"><i class="fa-regular fa-rectangle-list folder"></i><span
+                            class="folderText">Listas</span></button>
                 </div>
                 <div class="playListContent">
-                    <p>Lista de reproduccion</p>
+                    <p>Lista de reproducción</p>
                     <div class="playList">
                         <ul id="listaReproduccion"></ul>
                     </div>

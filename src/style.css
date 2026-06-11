@@ -33,11 +33,13 @@ body {
     justify-content: space-around;
     align-items: center;
     color: whitesmoke;
+    -webkit-app-region: drag;
 }
 
 .titulos {
     text-align: center;
-    scale: 1.5;
+    justify-content: space-around;
+    height: 100%;
 }
 
 .title {
@@ -48,6 +50,11 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 0 35px;
+    font-size: 2.5rem;
+}
+
+.artist {
+    font-size: 1.5rem;
 }
 
 .progreso {
@@ -163,11 +170,13 @@ main {
 
 .playList {
     width: 100%;
+    height: 125px;
     max-height: 125px;
     overflow: auto;
     padding: 2px 5px;
     background-color: rgb(80, 80, 80);
     border-radius: 10px;
+
 }
 
 .playList::-webkit-scrollbar {
@@ -176,6 +185,20 @@ main {
 
 .playList::-webkit-scrollbar-thumb {
     background-color: #0075ff;
+}
+
+.track {
+    display: flex;
+    justify-content: space-between;
+}
+
+.eliminar {
+    background: transparent;
+}
+
+.eliminarBtn {
+    color: whitesmoke;
+    background: transparent;
 }
 
 .caratula {
@@ -275,14 +298,30 @@ button:hover {
 }
 
 .isFolderBtn {
-    width: 80%;
-    background-color: whitesmoke;
-    height: 40px;
+    width: 25%;
+    background: transparent;
+    color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.isFolderBtn:hover {
+    color: #0075ff;
+}
+
+.folder {    
+    font-size: 20px;
+}
+
+.folderText {
+    font-size:16px;
 }
 
 .listBtn {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
 }
 
 ul {
@@ -338,4 +377,11 @@ button i:active {
     color: whitesmoke;
     height: 20px;
     background-color: transparent;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.track:hover {
+    background-color: #0075ff;
 }

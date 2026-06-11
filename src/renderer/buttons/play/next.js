@@ -30,8 +30,7 @@ export const nextTrack = () => {
         setindexCurrent(indexCurrent);
       } else {
         nextIndex();
-      }
-      updateActiveTrack();
+      }      
 
       if (indexCurrent >= playList.length) {
         if (repeatCondition === "repeat-normal") {

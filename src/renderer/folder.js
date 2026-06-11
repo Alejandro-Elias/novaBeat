@@ -31,8 +31,6 @@ export const folder = () => {
         }
         playListNormal.push(song)        
       });
-      
-      console.log(playListNormal);
 
 
       setStorage("playList", playListNormal)
