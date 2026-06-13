@@ -10,7 +10,7 @@ import {
 import { updateActiveTrack } from "../../resaltarTrack.js";
 import { setTrack } from "../../setTrack.js";
 import { ejecutarPlay, playSelectItem } from "../play.js";
-import { playList } from "./loadList.js";
+import { loadList, playList } from "./loadList.js";
 
 let repeatCondition = "repeat-normal";
 let indiceActualizado = indexCurrent;
@@ -27,6 +27,7 @@ export const nextTrack = () => {
       setStorage("indexCurrent", 0);
       setStorage("listaNueva", false);
       indiceActualizado = getStorage("indexCurrent");
+      loadList();
       updateActiveTrack();
     } else {
       if (repeatCondition === "repeat-one") {

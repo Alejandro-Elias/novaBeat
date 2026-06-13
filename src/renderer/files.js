@@ -24,9 +24,9 @@ export const files = async () => {
 
       setStorage("playList", nuevaPlaylist)
 
+      suffle()   
       mostrarLista()
-      loadList()
-      suffle()     
+      loadList()  
     }
   });
 };

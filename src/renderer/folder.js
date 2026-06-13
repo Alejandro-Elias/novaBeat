@@ -42,13 +42,12 @@ export const folder = () => {
       const path = `${playListNormal[indexCurrent].track.carpeta}/${playListNormal[indexCurrent].track.archivo}`;
 
       setCurrent({ path: path });
-
-      loadList();
       loadData();
       setListaNueva(true);
       setStorage("listaNueva", true)
       updateActiveTrack();
       suffle()
+      loadList();
       
     }
   });

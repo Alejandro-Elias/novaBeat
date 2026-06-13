@@ -14,8 +14,20 @@ const createWindow = () => {
     icon: path.join(__dirname, 'build', 'icon.png'),
     webPreferences: {
       preload: path.join(__dirname, "../preload.js"),
-    },
+    },    
   });
+
+  if (app.isPackaged) {
+  mainWindow.webContents.on("before-input-event", (event, input) => {
+    if (
+      input.key === "F12" ||
+      (input.control && input.shift && input.key.toLowerCase() === "i")
+    ) {
+      event.preventDefault();
+    }
+  });
+}
+
   ipcMain.on("close-app", () => {
     app.quit();
   });

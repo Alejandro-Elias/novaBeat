@@ -12,7 +12,10 @@ export const previousTrack = () => {
     if (indexCurrent > 0) {
       loadList()
       previousIndex();
-      updateActiveTrack();
+      updateActiveTrack();setTimeout(() => {
+            progress.max = 100;
+            progress.value = 0;
+          }, 5);
     }
 
     setTrack(player, playList, indexCurrent);

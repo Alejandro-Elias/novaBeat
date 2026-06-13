@@ -65,6 +65,16 @@
     color: #0075ff;
 }
 
+.buttons:hover, .play:hover  {
+    color: #0075ffaa;
+}
+
+.buttons:active, .play:active {
+    width: 100%;
+    border-radius: 50%;
+    border: 1px solid rgb(150, 150, 150);
+}
+
 .play {
     font-size: 50px;
     color: #0075ff;

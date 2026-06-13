@@ -20,16 +20,20 @@
 .title {
     min-width: 0;
     display: inline-block;
-    width: 400px;
+    width: 500px;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     padding: 0 35px;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .artist {
     font-size: 1.5rem;
+    width: 500px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .progreso {
@@ -51,8 +55,9 @@
     -webkit-appearance: none;
     appearance: none;
     overflow: hidden;
-    height: 16px;
+    height: 18px;
     background: rgb(80, 80, 80);
+    border-radius: 9px;
 }
 
 .barra-progreso::-webkit-slider-thumb {
