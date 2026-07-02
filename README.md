@@ -1,6 +1,6 @@
 # NovaBeats
 
-![Version](https://img.shields.io/badge/version-1.2.4-blue)
+![Version](https://img.shields.io/badge/version-1.2.5-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 Reproductor de música local para Linux desarrollado con Electron.
@@ -50,7 +50,7 @@ Construido con Electron y tecnologías web modernas, ofrece una experiencia de e
 
 ## Estado del proyecto
 
-**Versión actual:** 1.2.4
+**Versión actual:** 1.2.5
 
 NovaBeats es una aplicación funcional y estable para uso diario.
 

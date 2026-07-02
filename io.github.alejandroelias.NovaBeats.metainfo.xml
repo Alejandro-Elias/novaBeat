@@ -54,28 +54,34 @@
     <screenshot type="default">
       <caption>Main window</caption>
       <image type="source">
-        https://TU_URL/screenshot1.png
+        https://raw.githubusercontent.com/Alejandro-Elias/novabeats/refs/heads/master/docs/screenshots/main.png
       </image>
     </screenshot>
 
     <screenshot>
       <caption>Playlist management</caption>
       <image type="source">
-        https://TU_URL/screenshot2.png
-      </image>
+        https://raw.githubusercontent.com/Alejandro-Elias/novabeats/refs/heads/master/docs/screenshots/playlist.png
     </screenshot>
 
     <screenshot>
       <caption>Now playing</caption>
       <image type="source">
-        https://TU_URL/screenshot3.png
+        https://raw.githubusercontent.com/Alejandro-Elias/novabeats/refs/heads/master/docs/screenshots/list.png
+      </image>
+    </screenshot>
+
+    <screenshot>
+      <caption>Compact Mode</caption>
+      <image type="source">
+        https://raw.githubusercontent.com/Alejandro-Elias/novabeats/refs/heads/master/docs/screenshots/compact.png
       </image>
     </screenshot>
 
   </screenshots>
 
   <releases>
-    <release version="1.2.4" date="2026-06-30">
+    <release version="1.2.5" date="2026-07-02">
       <description>
         <p>Initial Flathub release.</p>
       </description>
