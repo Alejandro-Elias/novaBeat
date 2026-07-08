@@ -11,13 +11,13 @@ Reproductor de música local para Linux desarrollado con Electron.
 
 > Interfaz principal del reproductor
 
-![NovaBeats main](/src/assets/screenshots/main.png)
+![NovaBeats main](/docs/screenshots/main.png)
 
-![NovaBeats playlist](/src/assets/screenshots/playlist.png)
+![NovaBeats playlist](/docs/screenshots/playlist.png)
 
-![NovaBeats list](/src/assets/screenshots/list.png)
+![NovaBeats list](/docs/screenshots/list.png)
 
-![NovaBeats compact](/src/assets/screenshots/compact.png)
+![NovaBeats compact](/docs/screenshots/compact.png)
 
 ---
 
