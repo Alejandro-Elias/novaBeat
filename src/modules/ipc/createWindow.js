@@ -5,7 +5,6 @@ let win = null;
 
 const createWindow = () => {
   const iconPath = path.resolve(__dirname, "../../../build/icon.png");
-  const indexPath = path.resolve(__dirname, "../../index.html");
 
   win = new BrowserWindow({
     width: 1300,
@@ -59,7 +58,7 @@ const createWindow = () => {
     win.minimize();
   });
 
-  win.loadFile(indexPath);
+  win.loadURL("http://localhost:5173");
 };
 
 module.exports = createWindow;
